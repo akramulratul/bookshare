@@ -247,7 +247,7 @@ const Navbar = () => {
     return (
       <>
         <Link component={RouterLink} to="\" color="inherit">
-          <img className={image1} src={logo} alt="BookXchanger" />
+          <img className={image1} src={logo} alt="Book Changer" />
         </Link>
         <Toolbar className={toolbar}>{getMenuButtons()}</Toolbar>
       </>
@@ -287,7 +287,7 @@ const Navbar = () => {
           </Drawer>
 
           <Link component={RouterLink} to="\" color="inherit">
-            <img className={image1} src={logo} alt="BookXchanger" />
+            <img className={image1} src={logo} alt="Book Changer" />
           </Link>
         </Toolbar>
 

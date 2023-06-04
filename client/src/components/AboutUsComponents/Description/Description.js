@@ -25,7 +25,7 @@ const Description = () => {
                   fontWeight="fontWeightBold"
                   className={classes.contentBold}
                 >
-                  BookXchanger
+                  Book Changer
                 </Box>
               </Typography>
             </Typography>

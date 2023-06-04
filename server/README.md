@@ -1,48 +1,14 @@
-# **BookXchanger**
+# **Book changer**
 
 New data base password : sUGFdxEl71pxu6iU
-[![BookXchanger](https://res.cloudinary.com/bookxchanger/image/upload/v1621614882/Website/3_u5tfsj.gif)](http://localhost:5000/)
+[![Book changer](https://res.cloudinary.com/Book Changer/image/upload/v1621614882/Website/3_u5tfsj.gif)](http://localhost:5000/)
 
 ### Table of Content
 
-- [Team Members](#Team-Members)
-- [Team Mentor](#Team-Mentor)
-- [Introduction](#Introduction)
-- [Features](#Features)
-- [How To Use](#How-to-Use)
-  - [Buyer](#Buyer)
-  - [Seller](#Seller)
-- [Tech Stack](#Tech-Stack)
-  - [Frontend](#Frontend)
-  - [Backend](#Backend)
-  - [Database](#DataBase)
-  - [Design](#Design)
-- [Application](#Application)
-- [Future Scope](#Future-Scope)
-- [What we have learn from this project](#What-we-have-learn-from-this-project)
-- [Installation](#Installation)
-- [Contribution](#Contribution)
-- [Demo](#Demo)
-- [Links](#Links)
-- [Acknowledgement](#Acknowledgement)
-
-## Team members
-
-- [Sagar Mude](https://github.com/sagarmude7)
-- [Vedant Mondkar](https://github.com/vdmondkr2002)
-- [Vishal Dange](https://github.com/vishalbdange)
-- [Mohak Chandani](https://github.com/MohakChandani)
-- [Shashank Pagrut](https://github.com/Shashank2370)
-- [Vedant Mankar](https://github.com/VedantMankar)
-
-## Team Mentor
-
-- [Harshil Doshi](https://github.com/Harshil333)
-
 ## Introduction
 
-BookXchanger is a website where a person can buy or sell his books. Every year we see that if a student wants to buy second-hand books he has to ask everyone whether they have books or not. Similarly, if a person wants to sell his old books he has to ask everyone and search for buyers. So we try to create a platform where a person can buy or sell his second-hand books without any difficulty.
-So we try to make a BookXchanger website with almost all the features which can resolve all the problems the buyers or sellers face while buying or selling a book.
+Book Changer is a website where a person can buy or sell his books. Every year we see that if a student wants to buy second-hand books he has to ask everyone whether they have books or not. Similarly, if a person wants to sell his old books he has to ask everyone and search for buyers. So we try to create a platform where a person can buy or sell his second-hand books without any difficulty.
+So we try to make a Book Changer website with almost all the features which can resolve all the problems the buyers or sellers face while buying or selling a book.
 
 ## Features
 
@@ -99,7 +65,7 @@ So we try to make a BookXchanger website with almost all the features which can 
 
 ## Application
 
-> _BookXchanger is a website where a person can buy or sell his books. Every year we see that if a student wants to buy second-hand books he has to ask everyone whether they have books or not. Similarly, if a person wants to sell his old books he has to ask everyone and search for buyers. So we try to create a platform where a person can buy or sell his second-hand books without any difficulty._ > _So we try to make a BookXchanger website with almost all the features which can resolve all the problems the buyers or sellers face while buying or selling a book._
+> _Book Changer is a website where a person can buy or sell his books. Every year we see that if a student wants to buy second-hand books he has to ask everyone whether they have books or not. Similarly, if a person wants to sell his old books he has to ask everyone and search for buyers. So we try to create a platform where a person can buy or sell his second-hand books without any difficulty._ > _So we try to make a Book Changer website with almost all the features which can resolve all the problems the buyers or sellers face while buying or selling a book._
 
 ## Future scope
 
@@ -117,10 +83,10 @@ So we try to make a BookXchanger website with almost all the features which can 
    This project has helped me a lot to implement most of the MERN stack operations. Also some additional tricks I have learned through my mentor & teammates. Learned a lot of node modules and implemented them. Fixing the bugs was always challenging, but we have successfully fixed them. I am very glad!
 
 3. Vishal Dange -
-   This is the first project I have worked on which will be used in real life. In this Bookxchanger Project, I learned to apply all the theories learned about web development. Also, how to make use of libraries and add more features to the website.
+   This is the first project I have worked on which will be used in real life. In this Book Changer Project, I learned to apply all the theories learned about web development. Also, how to make use of libraries and add more features to the website.
 
 4. Mohak Chandani -
-   BookXchanger was my first project in the field of web development. This project has helped me to learn all the core concepts to build a web application using the MERN stack.
+   Book Changer was my first project in the field of web development. This project has helped me to learn all the core concepts to build a web application using the MERN stack.
 
 5. Shashank Pagrut -
    This was my first group project. Through this project, I was able to implement the core concepts of the MERN stack into a web application. My mentor and teammates also helped me to learn new tricks.
@@ -133,13 +99,13 @@ So we try to make a BookXchanger website with almost all the features which can 
 Step1 - Clone this repository using:
 
 ```
-$ git clone https://github.com/sagarmude7/Bookxchanger.git
+$ git clone https://github.com/sagarmude7/Book Changer.git
 ```
 
 Step2 - Install the server dependencies:
 
 ```
-cd Bookxchanger
+cd Book Changer
 npm install
 ```
 
@@ -188,14 +154,14 @@ $ git push origin feature/AddFeature
 
 You can see the demo video of our project below.
 
-[![Demo Video](https://res.cloudinary.com/bookxchanger/image/upload/v1621614856/Website/youtube_v1rtep.jpg)](https://www.youtube.com/watch?v=VfsMg4z-lfc)
+[![Demo Video](https://res.cloudinary.com/Book Changer/image/upload/v1621614856/Website/youtube_v1rtep.jpg)](https://www.youtube.com/watch?v=VfsMg4z-lfc)
 
 ## Links
 
 You will get all the links that are related to the project below-
 
-- [BookXchanger](http://localhost:5000/) - The link to BookXchanger Website.
-- [Github Repo's Link](https://github.com/sagarmude7/BookXchanger) - All the code of Project.
+- [Book Changer](http://localhost:5000/) - The link to Book Changer Website.
+- [Github Repo's Link](https://github.com/sagarmude7/Book Changer) - All the code of Project.
 - [Demo Video](https://youtu.be/VfsMg4z-lfc) - Demo Video of Project.
 
 ## Acknowledgement

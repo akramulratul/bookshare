@@ -23,7 +23,7 @@ const Footer = () => {
           >
             <Typography align="center">
               <Link href="#" color="inherit">
-                <img className={classes.image1} src={logo} alt="BookXchanger" />
+                <img className={classes.image1} src={logo} alt="Book changer" />
               </Link>
               <br />
               <Typography
@@ -56,7 +56,7 @@ const Footer = () => {
                 <InstagramIcon className={classes.Icon} />
               </Link>
               <Link
-                href="https://github.com/sagarmude7/Bookxchanger"
+                href="https://github.com/akramulratul/bookshare.git"
                 target="_blank"
                 color="inherit"
               >
@@ -66,7 +66,7 @@ const Footer = () => {
                 <LinkedInIcon className={classes.Icon} />
               </Link>
               <Link
-                href="mailto:bookxchanger@gmail.com"
+                href="mailto:akramulratul@gmail.com"
                 target="_blank"
                 color="inherit"
               >

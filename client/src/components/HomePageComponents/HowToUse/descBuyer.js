@@ -2,7 +2,7 @@ var buyer = [
   {
     heading: "Register",
     subHeading:
-      "Register via BookXchanger web. You can create account socially also.",
+      "Register via Book Changer web. You can create account socially also.",
     img:
       "https://res.cloudinary.com/bookxchanger/image/upload/v1620147853/Buyer/register_rypzoi.svg",
   },

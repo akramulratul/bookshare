@@ -25,7 +25,7 @@ const Description = () => {
                 letterSpacing={10}
                 className={classes.contentBold}
               >
-                BookXchanger
+                Book Changer
               </Box>
             </Typography>
             <Typography variant="h5" className={classes.smallText}>

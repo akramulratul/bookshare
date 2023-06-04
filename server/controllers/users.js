@@ -66,7 +66,7 @@ exports.signUp = async (req, res) => {
     );
     updatedUser.save();
     const sender = "reply.akramulratul@gmail.com";
-    const subject = "BookXchanger Verify Email";
+    const subject = "Book Changer Verify Email";
     const body =
       "You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n" +
       "Please click on the following link, or paste this into your browser to complete the process:\n\n" +
@@ -162,7 +162,7 @@ exports.verifyEmail = async (req, res) => {
     );
     updatedUser.save();
     const sender = "reply.akramulratul@gmail.com";
-    const subject = "BookXchanger Verify Email";
+    const subject = "Book Changer Verify Email";
     const body =
       "Please verify your email by clicking the link below:\n\n" +
       req.headers.origin +
@@ -252,7 +252,7 @@ exports.sendResetPassEmail = async (req, res) => {
     updatedUser.save();
     console.log(req.headers.origin);
     const sender = "reply.akramulratul@gmail.com";
-    const subject = "BookXchanger Password Reset";
+    const subject = "Book Changer Password Reset";
     const body =
       "You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n" +
       "Please click on the following link, or paste this into your browser to complete the process:\n\n" +
@@ -535,7 +535,7 @@ exports.sendMail = async (req, res) => {
       return res
         .status(400)
         .json({ msg: error.details[0].message, severity: "error" });
-    const receiver = "bookxchanger7@gmail.com";
+    const receiver = "akramulratul@gmail.com";
     const message = req.body.message;
     const subject = `Feedback from ${req.body.name}`;
 
@@ -575,7 +575,7 @@ const sendGoogleMail = async (to, toName, password) => {
   try {
     const receiver = to;
     const message = `
-            Welcome ${toName},Greetings from Bookxchanger!
+            Welcome ${toName},Greetings from Book Changer!
             Your password generated is:${password}
             If you want to SignIn manually next time use it.
             You can change this password later by editing your profile.

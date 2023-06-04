@@ -71,7 +71,7 @@ const HowToSell = () => {
             paddingTop: "10px",
           }}
         >
-          How to Use BookXchanger
+          How to Use Book Changer
         </Typography>
         <hr
           style={{
