@@ -77,3 +77,33 @@ export const deleteaBookFromWish = (book) => async (dispatch) => {
     console.log(err.message);
   }
 };
+
+export const requestBook = (bookId) => async (dispatch) => {
+  try {
+    const { data } = await api.requestBook(bookId);
+    // Assume REQUEST_BOOK is a new action type that you've defined
+    dispatch({ type: "REQUEST_BOOK", payload: data });
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const acceptRequest = (requestId) => async (dispatch) => {
+  try {
+    const { data } = await api.acceptRequest(requestId);
+    // Assume ACCEPT_REQUEST is a new action type that you've defined
+    dispatch({ type: "ACCEPT_REQUEST", payload: data });
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const returnBook = (bookId) => async (dispatch) => {
+  try {
+    const { data } = await api.returnBook(bookId);
+    // Assume RETURN_BOOK is a new action type that you've defined
+    dispatch({ type: "RETURN_BOOK", payload: data });
+  } catch (error) {
+    console.error(error);
+  }
+};

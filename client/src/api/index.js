@@ -56,6 +56,10 @@ const sendMail = (feedData) => API.post(`${urlUsers}/send-email`, feedData);
 // const getWishList = (id) => API.get(`${urlUsers}/wishList`);
 const deleteaBookFromWish = (book_id) => API.delete(`${urlUsers}/${book_id}`);
 
+const requestBook = (bookId) => API.post(`/request/book/${bookId}`);
+const acceptRequest = (requestId) => API.post(`/request/accept/${requestId}`);
+const returnBook = (bookId) => API.post(`/return/book/${bookId}`);
+
 module.exports = {
   fetchBooks,
   createBookAd,
@@ -78,4 +82,7 @@ module.exports = {
   resetPassword,
   verifyEmail,
   verifiedUser,
+  requestBook,
+  acceptRequest,
+  returnBook,
 };

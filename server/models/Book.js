@@ -82,6 +82,25 @@ const BookSchema = mongoose.Schema({
     type: Date,
     default: Date.now(),
   },
+  share: {
+    type: Boolean,
+    default: false,
+  },
+  borrowRequests: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+    },
+  ],
+  borrowed: {
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+    },
+    returnDate: {
+      type: Date,
+    },
+  },
 });
 
 const Book = mongoose.model("Book", BookSchema);

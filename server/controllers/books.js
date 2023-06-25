@@ -5,7 +5,9 @@ const User = require("../models/User");
 const { postBookValidator } = require("../validators/joi-validator");
 exports.getBooks = async (req, res) => {
   try {
-    const books = await Book.find();
+    const books = await Book.find()
+      .populate("borrowRequests", "username")
+      .populate("borrowed.user", "username");
     return res.status(200).json(books), console.log(books);
   } catch (err) {
     return res.status(404).json({ msg: "check" });
@@ -15,7 +17,6 @@ exports.getBooks = async (req, res) => {
 exports.createBookAd = async (req, res) => {
   const book = req.body;
   const { error } = postBookValidator.validate(req.body);
-
   if (!req.userId) return res.status(403).json({ msg: "Unauthorized" });
   try {
     if (error) {
@@ -24,8 +25,12 @@ exports.createBookAd = async (req, res) => {
     const { selectedFile } = req.body;
 
     const noOfPages = Number(book.noOfPages);
-    const price = Number(book.price);
-    const mrp = Number(book.mrp);
+    let price;
+    if (!book.share) {
+      // Add this condition
+      price = Number(book.price);
+    }
+    let mrp = Number(book.mrp);
 
     const newBook = new Book({
       ...book,
@@ -34,6 +39,7 @@ exports.createBookAd = async (req, res) => {
       mrp: mrp,
       owner: req.userId,
       wishListedBy: [],
+      share: book.share, // Add this line
       createdAt: new Date().toISOString(),
     });
     await newBook.save();
@@ -123,11 +129,117 @@ exports.editBook = async (req, res) => {
 
     const updatedBook = await Book.findByIdAndUpdate(
       id,
-      { ...toUpDate, updatedAt: new Date().toISOString() },
+      {
+        ...toUpDate,
+        share: toUpdate.share,
+        updatedAt: new Date().toISOString(),
+      },
       { new: true }
     );
     return res.status(200).json(updatedBook);
   } catch (err) {
     return res.status(500).json({ msg: "Something went wrong on Server.." });
+  }
+};
+// Corresponding controller functions (simplified)
+exports.requestBook = async (req, res) => {
+  const { id } = req.params;
+  if (!mongoose.Types.ObjectId.isValid(id))
+    return res.status(404).json({ message: `No book with id: ${id}` });
+
+  try {
+    const book = await Book.findById(id);
+    if (!book)
+      return res.status(404).json({ message: `No book with id: ${id}` });
+
+    if (!book.forSharing)
+      return res
+        .status(400)
+        .json({ message: "This book is not available for sharing" });
+
+    const { userId } = req;
+    if (String(book.owner) === String(userId))
+      return res
+        .status(400)
+        .json({ message: "You cannot request your own book" });
+
+    book.borrowRequests.push(userId);
+    const updatedBook = await Book.findByIdAndUpdate(id, book, { new: true });
+
+    return res.json(updatedBook);
+  } catch (error) {
+    return res
+      .status(500)
+      .json({ message: "Something went wrong on the server" });
+  }
+};
+
+exports.acceptRequest = async (req, res) => {
+  const { id } = req.params;
+  const { borrowerId } = req.body;
+
+  if (!mongoose.Types.ObjectId.isValid(id))
+    return res.status(404).json({ message: `No book with id: ${id}` });
+
+  try {
+    const book = await Book.findById(id);
+    if (!book)
+      return res.status(404).json({ message: `No book with id: ${id}` });
+
+    if (!book.forSharing)
+      return res
+        .status(400)
+        .json({ message: "This book is not available for sharing" });
+
+    const { userId } = req;
+    if (String(book.owner) !== String(userId))
+      return res.status(400).json({
+        message: "You cannot accept a request for a book you don't own",
+      });
+
+    if (!book.borrowRequests.includes(borrowerId))
+      return res
+        .status(400)
+        .json({ message: "This user did not request to borrow this book" });
+
+    book.borrowRequests = book.borrowRequests.filter((id) => id !== borrowerId);
+    book.currentBorrower = borrowerId;
+    book.returnDate = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000); // set return date to one week from now
+
+    const updatedBook = await Book.findByIdAndUpdate(id, book, { new: true });
+    return res.json(updatedBook);
+  } catch (error) {
+    return res
+      .status(500)
+      .json({ message: "Something went wrong on the server" });
+  }
+};
+
+exports.returnBook = async (req, res) => {
+  const { id } = req.params;
+
+  if (!mongoose.Types.ObjectId.isValid(id))
+    return res.status(404).json({ message: `No book with id: ${id}` });
+
+  try {
+    const book = await Book.findById(id);
+    if (!book)
+      return res.status(404).json({ message: `No book with id: ${id}` });
+
+    const { userId } = req;
+    if (String(book.currentBorrower) !== String(userId))
+      return res.status(400).json({
+        message: "You cannot return a book you are not currently borrowing",
+      });
+
+    book.currentBorrower = null;
+    book.returnDate = null;
+
+    const updatedBook = await Book.findByIdAndUpdate(id, book, { new: true });
+    return res.json(updatedBook);
+  } catch (error) {
+    return res
+      .status(500)
+      .json({ message: "Something went wrong on the server" });
   }
 };

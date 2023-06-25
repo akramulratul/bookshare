@@ -16,11 +16,13 @@ export const GET_BOOK = "GET_BOOK";
 export const UPDATE_SOLD = "UPDATE_SOLD";
 export const DELETE_BOOK = "DELETE_BOOK";
 
-export const VALID = 'VALID';
-export const ADD_CHAT = 'ADD_CHAT'
-export const INITIAL_CHAT = 'INITIAL_CHAT'
-export const GET_NOTIFICATION = 'GET_NOTIFICATION'
-export const CLEAR_NOTIFICATION = 'CLEAR_NOTIFICATION'
-export const GET_RECENTS = 'GET_RECENTS';
-export const DEL_BOOK_WISH = 'DEL_BOOK_WISH';
-
+export const VALID = "VALID";
+export const ADD_CHAT = "ADD_CHAT";
+export const INITIAL_CHAT = "INITIAL_CHAT";
+export const GET_NOTIFICATION = "GET_NOTIFICATION";
+export const CLEAR_NOTIFICATION = "CLEAR_NOTIFICATION";
+export const GET_RECENTS = "GET_RECENTS";
+export const DEL_BOOK_WISH = "DEL_BOOK_WISH";
+export const REQUEST_BOOK = "REQUEST_BOOK";
+export const ACCEPT_REQUEST = "ACCEPT_REQUEST";
+export const RETURN_BOOK = "RETURN_BOOK";
