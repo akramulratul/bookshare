@@ -1,6 +1,5 @@
 import {
-  FETCH_ALL,
-  CREATE,
+  CREATE_SHARE,
   ADD_FAV,
   UPDATE_SOLD,
   DELETE_BOOK,
@@ -11,24 +10,16 @@ import {
 } from "../constants/actions";
 const api = require("../api/index");
 
-export const getBooks = () => async (dispatch) => {
-  try {
-    const { data } = await api.fetchBooks();
-
-    dispatch({ type: FETCH_ALL, payload: data });
-  } catch (err) {}
-};
 export const getShareBooks = () => async (dispatch) => {
   try {
     const { data } = await api.fetchBooks();
-
     dispatch({ type: FETCH_SHARE_ALL, payload: data });
   } catch (err) {}
 };
 export const createBookAd = (formData, history) => async (dispatch) => {
   try {
-    const { data } = await api.createBookAd(formData);
-    dispatch({ type: CREATE, payload: data });
+    const { data } = await api.createShareBookAd(formData);
+    dispatch({ type: CREATE_SHARE, payload: data });
     dispatch({ type: VALID, payload: { msg: "Book Posted successfully" } });
     history.push("/");
   } catch (err) {

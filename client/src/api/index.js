@@ -14,9 +14,14 @@ API.interceptors.request.use((req) => {
 
 const urlBooks = "/books";
 
+const urlShareBooks = "/sharebooks";
+
 const fetchBooks = () => API.get(`${urlBooks}/all`);
+const fetchShareBooks = () => API.get(`${urlShareBooks}/all`);
 
 const createBookAd = (formData) => API.post(`${urlBooks}/add`, formData);
+const createShareBookAd = (formData) =>
+  API.post(`${urlShareBooks}/share`, formData);
 
 const addToWishList = (id) => API.patch(`${urlBooks}/${id}/addWishList`, id);
 
@@ -62,6 +67,7 @@ const returnBook = (bookId) => API.post(`/return/book/${bookId}`);
 
 module.exports = {
   fetchBooks,
+  fetchShareBooks,
   createBookAd,
   signUp,
   signIn,
@@ -85,4 +91,5 @@ module.exports = {
   requestBook,
   acceptRequest,
   returnBook,
+  createShareBookAd,
 };

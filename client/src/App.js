@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Container } from "@material-ui/core";
 import PostAdForm from "./components/PostAdComponents/PostAdForm.js";
+import PostShareForm from "./components/PostShareComponent/PostShareForm.js";
 import Home from "./components/HomePageComponents/Home.js";
 import Loading from "./components/Loading/Loading.js";
 import Auth from "./components/Auth/Auth";
@@ -21,8 +22,8 @@ import { green } from "@material-ui/core/colors";
 import history from "./history/history.js";
 import { useDispatch, useSelector } from "react-redux";
 import OtherUser from "./components/OtherUserComponents/OtherUser";
-import ForgotPassword from './components/ForgotPassword/ForgotPassword'
-import VerifyEmail from './components/VerifyEmail/VerifyEmail'
+import ForgotPassword from "./components/ForgotPassword/ForgotPassword";
+import VerifyEmail from "./components/VerifyEmail/VerifyEmail";
 import { socket } from "./service/socket";
 import { GET_NOTIFICATION, CLEAR_NOTIFICATION } from "./constants/actions.js";
 
@@ -116,14 +117,19 @@ const App = () => {
           <Route exact path="/all" component={DisplayBooks} />
           <Route exact path="/aboutus" component={About} />
           <Route exact path="/add" component={PostAdForm} />
+          <Route exact path="/share" component={PostShareForm} />
           <Route exact path="/auth" socket={socket} component={Auth} />
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/wishlist" component={Wishlist} />
           <Route exact path="/all/book/:bookId" component={BookInfo} />
           <Route exact path="/editBook/:bookId" component={EditBook} />
           <Route exact path="/user/:userId" component={OtherUser} />
-          <Route exact path="/password-reset/:token" component={ForgotPassword}/>
-          <Route exact path="/verify-email/:token" component={VerifyEmail}/>
+          <Route
+            exact
+            path="/password-reset/:token"
+            component={ForgotPassword}
+          />
+          <Route exact path="/verify-email/:token" component={VerifyEmail} />
         </Switch>
         <Footer />
       </Container>

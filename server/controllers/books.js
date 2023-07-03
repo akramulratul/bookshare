@@ -5,9 +5,7 @@ const User = require("../models/User");
 const { postBookValidator } = require("../validators/joi-validator");
 exports.getBooks = async (req, res) => {
   try {
-    const books = await Book.find()
-      .populate("borrowRequests", "username")
-      .populate("borrowed.user", "username");
+    const books = await Book.find();
     return res.status(200).json(books), console.log(books);
   } catch (err) {
     return res.status(404).json({ msg: "check" });

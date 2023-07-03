@@ -26,3 +26,5 @@ export const DEL_BOOK_WISH = "DEL_BOOK_WISH";
 export const REQUEST_BOOK = "REQUEST_BOOK";
 export const ACCEPT_REQUEST = "ACCEPT_REQUEST";
 export const RETURN_BOOK = "RETURN_BOOK";
+export const FETCH_SHARE_ALL = "FETCH_SHARE_ALL";
+export const CREATE_SHARE = "CREATE_SHARE";

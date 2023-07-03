@@ -65,6 +65,21 @@ const postBookValidator = joi.object({
   // }),
 });
 
+const postBookShareValidator = joi.object({
+  bookName: joi.string(),
+  subject: joi.string(),
+  branch: joi.string(),
+  selectedFile: joi.string(),
+  author: joi.string(),
+  bookName: joi.string(),
+  tags: joi.array(),
+  noOfPages: joi.number(),
+  edition: joi.string(),
+  description: joi.string(),
+  ownerName: joi.string(),
+  direction: joi.string(),
+});
+
 const feedBackValidator = joi.object({
   name: joi.string().required(),
   message: joi.string().required().min(20),
@@ -76,3 +91,4 @@ module.exports.editValidator = editValidator;
 module.exports.changePasswordValidator = changePasswordValidator;
 module.exports.postBookValidator = postBookValidator;
 module.exports.feedBackValidator = feedBackValidator;
+module.exports.postBookShareValidator = postBookShareValidator;

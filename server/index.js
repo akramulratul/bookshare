@@ -36,6 +36,7 @@ app.use((req, res, next) => {
 app.use(express.json({ limit: "80mb", extended: true }));
 app.use(express.urlencoded({ limit: "80mb", extended: true }));
 app.use("/books/", require("./routes/books"));
+app.use("/shareBooks/", require("./routes/shareBooks"));
 app.use("/users/", require("./routes/users"));
 
 var server = app.listen(PORT, () =>
