@@ -72,11 +72,11 @@ const PostShareForm = () => {
   const Alert = (props) => {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
   };
-  // useEffect(() => {
-  //   setUser(JSON.parse(localStorage.getItem("profile")));
-  //   const token = user?.token;
-  //   if (!token) history.push("/auth");
-  // }, [user?.token, history]);
+  useEffect(() => {
+    setUser(JSON.parse(localStorage.getItem("profile")));
+    const token = user?.token;
+    if (!token) history.push("/auth");
+  }, [user?.token, history]);
   console.log(shareBookData.msg);
   //   useEffect(() => {
   //     console.log(ShareBook);

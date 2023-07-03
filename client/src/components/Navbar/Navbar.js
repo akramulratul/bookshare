@@ -18,6 +18,7 @@ import { LOGOUT } from "../../constants/actions";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import decode from "jwt-decode";
+import PostBookAd from "../PostBookAd/PostBookAd";
 
 const Navbar = () => {
   const {
@@ -122,6 +123,16 @@ const Navbar = () => {
         >
           <MenuItem style={{ backgroundColor: "#e98074" }}>Sell Books</MenuItem>
         </Link>
+        <Link
+          to="/share"
+          component={RouterLink}
+          className={menuButton}
+          key="Sell Books"
+        >
+          <MenuItem style={{ backgroundColor: "#e98074" }}>
+            Share Books
+          </MenuItem>
+        </Link>
       </>
     );
   };
@@ -225,7 +236,9 @@ const Navbar = () => {
             </Button>
           </>
         )}
-
+        {/* <Button component={RouterLink}>
+          <PostBookAd />
+        </Button> */}
         <Button
           component={RouterLink}
           to="/add"
@@ -238,6 +251,19 @@ const Navbar = () => {
           className={sellButton}
         >
           Sell Books
+        </Button>
+        <Button
+          component={RouterLink}
+          to="/share"
+          style={{
+            padding: " 10px",
+            margin: "5px",
+            color: "white",
+            backgroundColor: "#e98074",
+          }}
+          className={sellButton}
+        >
+          Share Books
         </Button>
       </>
     );

@@ -80,11 +80,11 @@ const PostAdForm = () => {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
   };
   const [share, setShare] = useState(false);
-  // useEffect(() => {
-  //   setUser(JSON.parse(localStorage.getItem("profile")));
-  //   const token = user?.token;
-  //   if (!token) history.push("/auth");
-  // }, [user?.token, history]);
+  useEffect(() => {
+    setUser(JSON.parse(localStorage.getItem("profile")));
+    const token = user?.token;
+    if (!token) history.push("/auth");
+  }, [user?.token, history]);
 
   useEffect(() => {
     if (book.msg) setErr(true);
