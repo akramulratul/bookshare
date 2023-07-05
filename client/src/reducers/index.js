@@ -8,6 +8,8 @@ import wishList from "./wishList";
 import chats from "./chats";
 import notification from "./notifications";
 import recents from "./recents";
+import shareBook from "./shareBook";
+import shareBooks from "./shareBooks";
 
 export default combineReducers({
   books,
@@ -19,4 +21,6 @@ export default combineReducers({
   chats,
   notification,
   recents,
+  shareBook,
+  shareBooks,
 });

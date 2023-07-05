@@ -12,7 +12,8 @@ const api = require("../api/index");
 
 export const getShareBooks = () => async (dispatch) => {
   try {
-    const { data } = await api.fetchBooks();
+    const { data } = await api.fetchShareBooks();
+    console.log(data);
     dispatch({ type: FETCH_SHARE_ALL, payload: data });
   } catch (err) {}
 };
