@@ -38,7 +38,7 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box p={3}>
+        <Box p={4}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -81,7 +81,9 @@ const Profile = () => {
   if (localUser)
     userId = JSON.parse(localStorage.getItem("profile")).profile.id;
   const books = useSelector((state) => state.books);
+  const shareBooks = useSelector((state) => state.shareBooks);
   var numberSoldBooks = 0;
+  var numberSharedBooks = 0;
   var totalListing = 0;
   const soldBooks = books.filter(
     (book) => book.owner === userId && book.isSold === true
@@ -93,6 +95,19 @@ const Profile = () => {
 
   if (user.postedBooks) {
     totalListing = user.postedBooks.length;
+  }
+
+  //for Share
+  const sharedBooks = shareBooks.filter(
+    (book) => book.owner === userId && book.isShare === true
+  );
+
+  if (sharedBooks) {
+    numberSharedBooks = sharedBooks?.length;
+  }
+
+  if (user.postedSharedBooks) {
+    totalListing = user.postedSharedBooks.length;
   }
 
   const [value, setValue] = useState(0);
@@ -163,6 +178,12 @@ const Profile = () => {
             </Typography>
             <Typography className={classes.listLetter}>Ads Sold</Typography>
           </div>
+          <div className={classes.listing2}>
+            <Typography className={classes.listNumber}>
+              {numberSharedBooks}
+            </Typography>
+            <Typography className={classes.listLetter}>Shared</Typography>
+          </div>
         </Container>
         <ThemeProvider theme={outerTheme}>
           <AppBar className={classes.rootTab} position="static" color="default">
@@ -188,8 +209,13 @@ const Profile = () => {
               />
               <Tab
                 className={classes.rootTab}
-                label="Messages"
+                label="Shared Book"
                 {...a11yProps(2)}
+              />
+              <Tab
+                className={classes.rootTab}
+                label="Messages"
+                {...a11yProps(3)}
               />
             </Tabs>
           </AppBar>
@@ -203,8 +229,10 @@ const Profile = () => {
       <TabPanel value={value} index={1} dir={theme.direction}>
         <Dashboard />
       </TabPanel>
-
       <TabPanel value={value} index={2} dir={theme.direction}>
+        <Dashboard />
+      </TabPanel>
+      <TabPanel value={value} index={3} dir={theme.direction}>
         <Message />
       </TabPanel>
     </div>
