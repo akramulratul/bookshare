@@ -31,7 +31,7 @@ import PhotoCamera from "@material-ui/icons/PhotoCamera";
 import Compress from "compress.js";
 import { useDispatch, useSelector } from "react-redux";
 import useStyles from "./style";
-import { createBookAd } from "../../actions/shareBooks";
+import { createShareBookAd } from "../../actions/shareBooks";
 import { VALID } from "../../constants/actions";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 
@@ -43,6 +43,7 @@ const initialState = {
   tags: [],
   noOfPages: "",
   edition: "",
+  direction: "",
   description: "",
 };
 
@@ -66,6 +67,7 @@ const PostShareForm = () => {
   };
 
   const handleChange = (e) => {
+    console.log(e.target.value);
     setShareBookData({ ...shareBookData, [e.target.name]: e.target.value });
   };
 
@@ -95,7 +97,7 @@ const PostShareForm = () => {
     e.preventDefault();
 
     dispatch(
-      createBookAd(
+      createShareBookAd(
         {
           ...shareBookData,
           ownerName: user.profile.name,
@@ -198,6 +200,16 @@ const PostShareForm = () => {
                       label="Name of the Author/Publication"
                       fullWidth
                       value={shareBookData.author}
+                      onChange={handleChange}
+                    />
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <TextField
+                      name="direction"
+                      variant="outlined"
+                      label="Share your Address"
+                      fullWidth
+                      value={shareBookData.direction}
                       onChange={handleChange}
                     />
                   </Grid>

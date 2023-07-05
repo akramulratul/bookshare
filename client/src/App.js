@@ -26,6 +26,7 @@ import ForgotPassword from "./components/ForgotPassword/ForgotPassword";
 import VerifyEmail from "./components/VerifyEmail/VerifyEmail";
 import { socket } from "./service/socket";
 import { GET_NOTIFICATION, CLEAR_NOTIFICATION } from "./constants/actions.js";
+import AllBooksShare from "./components/AllShareBooksComponents/AllBooksShare.js";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -115,6 +116,7 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/all" component={DisplayBooks} />
+          <Route exact path="/allshare" component={AllBooksShare} />
           <Route exact path="/aboutus" component={About} />
           <Route exact path="/add" component={PostAdForm} />
           <Route exact path="/share" component={PostShareForm} />

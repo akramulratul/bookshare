@@ -50,6 +50,11 @@ const ShareBookSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  direction: {
+    //edition of the book
+    type: String,
+    required: true,
+  },
   description: String, //description of the book
   createdAt: {
     //created At

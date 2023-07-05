@@ -16,7 +16,7 @@ export const getShareBooks = () => async (dispatch) => {
     dispatch({ type: FETCH_SHARE_ALL, payload: data });
   } catch (err) {}
 };
-export const createBookAd = (formData, history) => async (dispatch) => {
+export const createShareBookAd = (formData, history) => async (dispatch) => {
   try {
     const { data } = await api.createShareBookAd(formData);
     dispatch({ type: CREATE_SHARE, payload: data });

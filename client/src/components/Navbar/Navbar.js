@@ -106,6 +106,15 @@ const Navbar = () => {
           <MenuItem>Books</MenuItem>
         </Link>
         <Link
+          to="/allShare"
+          component={RouterLink}
+          color="inherit"
+          className={menuButton}
+          key="Books"
+        >
+          <MenuItem>Books Share</MenuItem>
+        </Link>
+        <Link
           to="/aboutus"
           component={RouterLink}
           color="inherit"
@@ -135,6 +144,9 @@ const Navbar = () => {
           </Button>
           <Button component={RouterLink} to="/all" className={menuButton}>
             Books
+          </Button>
+          <Button component={RouterLink} to="/allshare" className={menuButton}>
+            Books Share
           </Button>
           <Button component={RouterLink} to="/aboutus" className={menuButton}>
             About Us
