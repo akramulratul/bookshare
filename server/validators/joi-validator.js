@@ -33,21 +33,6 @@ const postBookValidator = joi.object({
   bookName: joi.string().required(),
   subject: joi.string().required(),
   branch: joi.string().required(),
-  // condition: joi.string().when("share", {
-  //   is: false, // when 'share' is false (meaning the book is for sale, not for share)
-  //   then: joi.required(),
-  //   otherwise: joi.allow(null),
-  // }),
-  // priceType: joi.string().when("share", {
-  //   is: false, // when 'share' is false (meaning the book is for sale, not for share)
-  //   then: joi.required(),
-  //   otherwise: joi.allow(null),
-  // }),
-  // mrp: joi.number().when("share", {
-  //   is: false, // when 'share' is false (meaning the book is for sale, not for share)
-  //   then: joi.required(),
-  //   otherwise: joi.allow(null),
-  // }),
   selectedFile: joi.string().required(),
   author: joi.string().required(),
   bookName: joi.string().required(),
@@ -58,16 +43,12 @@ const postBookValidator = joi.object({
   ownerName: joi.string().required(),
   share: joi.boolean(),
   price: joi.number(),
-  // price: joi.number().when("share", {
-  //   is: false, // when 'share' is false (meaning the book is for sale, not for share)
-  //   then: joi.required(),
-  //   otherwise: joi.allow(null),
-  // }),
 });
 
 const postBookShareValidator = joi.object({
   bookName: joi.string(),
   subject: joi.string(),
+  location: joi.string(),
   branch: joi.string(),
   selectedFile: joi.string(),
   author: joi.string(),

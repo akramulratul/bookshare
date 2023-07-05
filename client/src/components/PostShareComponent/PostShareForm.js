@@ -38,6 +38,7 @@ import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 const initialState = {
   bookName: "",
   subject: "",
+  location: "",
   author: "",
   branch: "",
   tags: [],
@@ -128,11 +129,11 @@ const PostShareForm = () => {
                   className={classes.textfield}
                 />
                 <TextField
-                  name="subject"
+                  name="location"
                   variant="outlined"
-                  label="Subject of Book"
+                  label="Give your Proper Address"
                   fullWidth
-                  value={shareBookData.subject}
+                  value={shareBookData.location}
                   onChange={handleChange}
                   className={classes.textfield}
                 />
@@ -222,6 +223,16 @@ const PostShareForm = () => {
                         id="contained-button-file"
                         multiple
                         type="file"
+                      />
+
+                      <TextField
+                        name="subject"
+                        variant="outlined"
+                        label="Subject of Book"
+                        fullWidth
+                        value={shareBookData.subject}
+                        onChange={handleChange}
+                        className={classes.textfield}
                       />
 
                       <label htmlFor="icon-button-file">

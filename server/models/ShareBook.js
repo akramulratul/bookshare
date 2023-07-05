@@ -28,6 +28,11 @@ const ShareBookSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  location: {
+    //subject -> Engineering subject
+    type: String,
+    required: true,
+  },
   branch: {
     type: String,
     required: true,
