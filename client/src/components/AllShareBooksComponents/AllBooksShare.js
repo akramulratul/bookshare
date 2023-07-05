@@ -15,7 +15,7 @@ import {
 } from "@material-ui/core";
 import Book from "./Book/Book";
 import useStyles from "./style";
-import SearchBox from "../AllBooksComponents/SearchBar/SearchBox";
+import SearchBox from "./SearchBar/SearchBox";
 import Zoom from "react-reveal/Zoom";
 import PulseLoader from "react-spinners/PulseLoader";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
