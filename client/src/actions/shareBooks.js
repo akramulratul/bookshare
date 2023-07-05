@@ -36,7 +36,7 @@ export const addToWishList = (id) => async (dispatch) => {
   } catch (error) {}
 };
 
-export const showBookInfo = (bookId) => async (dispatch) => {
+export const showBookShareInfo = (bookId) => async (dispatch) => {
   try {
   } catch (error) {}
 };

@@ -27,6 +27,7 @@ import VerifyEmail from "./components/VerifyEmail/VerifyEmail";
 import { socket } from "./service/socket";
 import { GET_NOTIFICATION, CLEAR_NOTIFICATION } from "./constants/actions.js";
 import AllBooksShare from "./components/AllShareBooksComponents/AllBooksShare.js";
+import ShareBookInfo from "./components/AllShareBooksComponents/BookInfo/ShareBookInfo.js";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -124,6 +125,11 @@ const App = () => {
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/wishlist" component={Wishlist} />
           <Route exact path="/all/book/:bookId" component={BookInfo} />
+          <Route
+            exact
+            path="/allshare/book/:bookId"
+            component={ShareBookInfo}
+          />
           <Route exact path="/editBook/:bookId" component={EditBook} />
           <Route exact path="/user/:userId" component={OtherUser} />
           <Route

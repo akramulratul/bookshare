@@ -6,7 +6,7 @@ import {
   Button,
   Typography,
   Grid,
-  Container
+  Container,
 } from "@material-ui/core/";
 import PersonPinIcon from "@material-ui/icons/PersonPin";
 import ScheduleIcon from "@material-ui/icons/Schedule";
@@ -20,16 +20,15 @@ import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { VALID } from "../../../constants/actions";
 
-const Book = ({book }) => {
+const Book = ({ book }) => {
   const classes = useStyles();
   const dispatch = useDispatch();
   const history = useHistory();
   const user = JSON.parse(localStorage.getItem("profile"));
   const [fav, setFav] = useState(false);
   useEffect(() => {
-    if (book){
+    if (book) {
       setFav(book?.wishListedBy?.find((id) => id === user?.profile?.id));
-      
     }
   }, []);
   const addtofavourite = () => {
@@ -47,93 +46,88 @@ const Book = ({book }) => {
   };
 
   const getBook = () => {
-    history.push(`/all/shareBook/${book._id}`);
+    history.push(`/allshare/book/${book._id}`);
   };
 
   return (
-      <Card raised className={classes.card}>
-            <div className={classes.top}>
-              <CardMedia
-                className={classes.media}
-                src="book"
-                image={book.selectedFile}
-              />
+    <Card raised className={classes.card}>
+      <div className={classes.top}>
+        <CardMedia
+          className={classes.media}
+          src="book"
+          image={book.selectedFile}
+        />
 
-              <Typography className={classes.price}>
+        {/* <Typography className={classes.price}>
                 {"৳"}
                 {book.price}
                 {" ("}
                 {book.priceType}
                 {")"}
-              </Typography>
+              </Typography> */}
 
-              <CardActions className={classes.favourite}>
-                <Button size="medium" color="secondary" onClick={addtofavourite}>
-                  {fav ? (
-                    <FavoriteIcon
-                      disableFocusRipple={true}
-                      disableRipple={false}
-                      style={{ color: "#e98074" }}
-                    />
-                  ) : (
-                    <FavoriteBorderIcon style={{ color: "#e98074" }} />
-                  )}
-                </Button>
-              </CardActions>
-            </div>
-
-            <div>
-              <Typography variant="body2" className={classes.Branch}>
-                {book.branch}
-              </Typography>
-            </div>
-
-            <Typography variant="h6" className={classes.BookName}>
-              {book.bookName}
-            </Typography>
-
-            <Typography variant="body2" className={classes.Description}>
-              {book.description}
-            </Typography>
-
-            <CardActions disableSpacing>
-              <PersonPinIcon
-                style={{
-                  marginLeft: "5px",
-                  marginRight: "5px",
-                  color: "#e98074",
-                }}
+        <CardActions className={classes.favourite}>
+          <Button size="medium" color="secondary" onClick={addtofavourite}>
+            {fav ? (
+              <FavoriteIcon
+                disableFocusRipple={true}
+                disableRipple={false}
+                style={{ color: "#e98074" }}
               />
-              {user ? (
-                <Link to={`/user/${book.owner}`} style={{ textDecoration: "none" }}>
-                  <Typography className={classes.owner}>
-                    {book.ownerName}
-                  </Typography>
-                </Link>
-              ) : (
-                <Link to={`/auth`} style={{ textDecoration: "none" }}>
-                  <Typography className={classes.owner}>
-                    {book.ownerName}
-                  </Typography>
-                </Link>
-              )}
-            </CardActions>
+            ) : (
+              <FavoriteBorderIcon style={{ color: "#e98074" }} />
+            )}
+          </Button>
+        </CardActions>
+      </div>
 
-            <CardActions disableSpacing>
-              <ScheduleIcon
-                fontSize="small"
-                style={{ marginLeft: "5px", marginRight: "5px" }}
-              />
-              <Typography variant="body2">
-                {moment(book.createdAt).format("DD MMM, YYYY")}
-              </Typography>
-            </CardActions>
+      <div>
+        <Typography variant="body2" className={classes.Branch}>
+          {book.branch}
+        </Typography>
+      </div>
 
-            <Button variant="outlined" onClick={getBook} className={classes.button}>
-              bookInfo
-            </Button>
-          </Card>
+      <Typography variant="h6" className={classes.BookName}>
+        {book.bookName}
+      </Typography>
 
+      <Typography variant="body2" className={classes.Description}>
+        {book.description}
+      </Typography>
+
+      <CardActions disableSpacing>
+        <PersonPinIcon
+          style={{
+            marginLeft: "5px",
+            marginRight: "5px",
+            color: "#e98074",
+          }}
+        />
+        {user ? (
+          <Link to={`/user/${book.owner}`} style={{ textDecoration: "none" }}>
+            <Typography className={classes.owner}>{book.ownerName}</Typography>
+          </Link>
+        ) : (
+          <Link to={`/auth`} style={{ textDecoration: "none" }}>
+            <Typography className={classes.owner}>{book.ownerName}</Typography>
+          </Link>
+        )}
+      </CardActions>
+
+      <CardActions disableSpacing>
+        <ScheduleIcon
+          fontSize="small"
+          style={{ marginLeft: "5px", marginRight: "5px" }}
+        />
+        <Typography variant="body2">
+          {moment(book.createdAt).format("DD MMM, YYYY")}
+        </Typography>
+      </CardActions>
+
+      <Button variant="outlined" onClick={getBook} className={classes.button}>
+        bookInfo
+      </Button>
+    </Card>
   );
 };
 

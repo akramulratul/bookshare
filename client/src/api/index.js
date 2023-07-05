@@ -26,6 +26,7 @@ const createShareBookAd = (formData) =>
 const addToWishList = (id) => API.patch(`${urlBooks}/${id}/addWishList`, id);
 
 const showBookInfo = (bookId) => API.get(`${urlBooks}/book/${bookId}`);
+const showBookShareInfo = (bookId) => API.get(`${urlShareBooks}/book/${bookId}`);
 
 const updatedIsSold = (bookId) => API.patch(`${urlBooks}/${bookId}/sold`);
 
@@ -76,6 +77,7 @@ module.exports = {
   getProfile,
   editProfile,
   showBookInfo,
+  showBookShareInfo,
   updatedIsSold,
   deleteaBook,
   editaBook,

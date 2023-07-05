@@ -13,7 +13,7 @@ import {
   FormControl,
   Typography,
 } from "@material-ui/core";
-// import Book from "./Book/Book";
+import Book from "./Book/Book";
 import useStyles from "./style";
 import SearchBox from "../AllBooksComponents/SearchBar/SearchBox";
 import Zoom from "react-reveal/Zoom";
@@ -53,11 +53,11 @@ const AllBooksShare = () => {
     }
   }, [AllBooksShare]);
 
-  // useEffect(() => {
-  //   if (allBooks.length !== 0) {
-  //     setBooks(allBooks.filter((book) => book.isShare === false));
-  //   }
-  // }, [dispatch, allBooks]);
+  useEffect(() => {
+    if (AllBooksShare.length !== 0) {
+      setBooks(AllBooksShare.filter((book) => book.isShare === false));
+    }
+  }, [dispatch, AllBooksShare]);
 
   useEffect(() => {
     if (sortbool === true) {
@@ -196,7 +196,7 @@ const AllBooksShare = () => {
                 >
                   {currentBooks.map((book) => (
                     <Grid className={classes.grid}>
-                      {/* <Book key={book._id} book={book} /> */}
+                      <Book key={book._id} book={book} />
                     </Grid>
                   ))}
                 </Grid>
