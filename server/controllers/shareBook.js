@@ -60,3 +60,16 @@ exports.createShareBookAd = async (req, res) => {
     return res.status(409).json({ msg: "Something went wrong on Server.." });
   }
 };
+
+exports.deleteAShareBook = async (req, res) => {
+  const { id } = req.params;
+  try {
+    if (!mongoose.Types.ObjectId.isValid(id))
+      return res.status(404).json({ msg: `No Book with id:${id}` });
+
+    await ShareBook.findByIdAndRemove(id);
+    return res.status(204).json({ msg: "Book Deleted Successfully" });
+  } catch (err) {
+    return res.status(500).json({ msg: "Something went wrong on Server.." });
+  }
+};

@@ -1,8 +1,8 @@
 import {
   CREATE_SHARE,
   ADD_FAV,
-  UPDATE_SOLD,
-  DELETE_BOOK,
+  UPDATE_SHARE,
+  DELETE_SHARE_BOOK,
   UPDATE_BOOKS,
   VALID,
   DEL_BOOK_WISH,
@@ -41,17 +41,17 @@ export const showBookShareInfo = (bookId) => async (dispatch) => {
   } catch (error) {}
 };
 
-export const updatedIsSold = (bookId) => async (dispatch) => {
+export const updatedIsShare = (bookId) => async (dispatch) => {
   try {
-    const { data } = await api.updatedIsSold(bookId);
-    dispatch({ type: UPDATE_SOLD, payload: data });
+    const { data } = await api.updatedIsShare(bookId);
+    dispatch({ type: UPDATE_SHARE, payload: data });
   } catch (error) {}
 };
 
-export const deleteaBook = (bookId) => async (dispatch) => {
+export const deleteAShareBook = (bookId) => async (dispatch) => {
   try {
-    await api.deleteaBook(bookId);
-    dispatch({ type: DELETE_BOOK, payload: bookId });
+    await api.deleteAShareBook(bookId);
+    dispatch({ type: DELETE_SHARE_BOOK, payload: bookId });
   } catch (err) {}
 };
 

@@ -15,7 +15,9 @@ export const FEEDBACK = "FEEDBACK";
 export const GET_BOOK = "GET_BOOK";
 export const GET_SHARE_BOOK = "GET_SHARE_BOOK";
 export const UPDATE_SOLD = "UPDATE_SOLD";
+export const UPDATE_SHARE = "UPDATE_SHARE";
 export const DELETE_BOOK = "DELETE_BOOK";
+export const DELETE_SHARE_BOOK = "DELETE_SHARE_BOOK";
 
 export const VALID = "VALID";
 export const ADD_CHAT = "ADD_CHAT";

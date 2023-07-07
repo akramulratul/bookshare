@@ -5,7 +5,7 @@ const {
   createShareBookAd,
   addToWishList,
   updateIsSold,
-  //   deleteaBook,
+  deleteAShareBook,
   //   editBook,
   //   requestBook, // make sure this is added
   //   acceptRequest, // and this
@@ -16,7 +16,7 @@ const auth = require("../middleware/auth");
 router.get("/all", getSharedBooks);
 router.post("/share", auth, createShareBookAd);
 // router.patch("/:id/addWishList", auth, addToWishList);
-// router.delete("/:id", auth, deleteaBook);
+router.delete("/:id", auth, deleteAShareBook);
 // router.patch("/:id", auth, editBook);
 // router.patch("/:id/request", auth, requestBook);
 // router.patch("/:id/accept", auth, acceptRequest);

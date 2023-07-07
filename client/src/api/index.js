@@ -26,12 +26,13 @@ const createShareBookAd = (formData) =>
 const addToWishList = (id) => API.patch(`${urlBooks}/${id}/addWishList`, id);
 
 const showBookInfo = (bookId) => API.get(`${urlBooks}/book/${bookId}`);
-const showBookShareInfo = (bookId) => API.get(`${urlShareBooks}/book/${bookId}`);
+const showBookShareInfo = (bookId) =>
+  API.get(`${urlShareBooks}/book/${bookId}`);
 
 const updatedIsSold = (bookId) => API.patch(`${urlBooks}/${bookId}/sold`);
 
 const deleteaBook = (bookId) => API.delete(`${urlBooks}/${bookId}`);
-
+const deleteAShareBook = (bookId) => API.delete(`${urlShareBooks}/${bookId}`);
 const editaBook = (id, formData) => API.patch(`${urlBooks}/${id}`, formData);
 
 const urlUsers = "/users";
@@ -80,6 +81,7 @@ module.exports = {
   showBookShareInfo,
   updatedIsSold,
   deleteaBook,
+  deleteAShareBook,
   editaBook,
   changePassword,
   sendMail,

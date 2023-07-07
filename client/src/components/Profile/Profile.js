@@ -18,6 +18,7 @@ import { getRecentUsers } from "../../actions/user";
 import Message from "./Messages/Message";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import DashboardShare from "./Dashboard Share components/DashboardShare.js";
 
 const outerTheme = createMuiTheme({
   palette: {
@@ -230,7 +231,7 @@ const Profile = () => {
         <Dashboard />
       </TabPanel>
       <TabPanel value={value} index={2} dir={theme.direction}>
-        <Dashboard />
+        <DashboardShare />
       </TabPanel>
       <TabPanel value={value} index={3} dir={theme.direction}>
         <Message />

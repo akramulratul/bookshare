@@ -1,11 +1,11 @@
 import {
-    FETCH_SHARE_ALL,
-//   CREATE,
+  FETCH_SHARE_ALL,
+  //   CREATE,
   FILTER_BOOKS,
-//   ADD_FAV,
-//   UPDATE_SOLD,
-//   DELETE_BOOK,
-//   UPDATE_BOOKS,
+  //   ADD_FAV,
+  UPDATE_SHARE,
+  DELETE_SHARE_BOOK,
+  //   UPDATE_BOOKS,
 } from "../constants/actions";
 
 export default (shareBooks = [], action) => {
@@ -20,16 +20,16 @@ export default (shareBooks = [], action) => {
     //   return shareBooks.map((book) =>
     //     action.payload._id === book._id ? action.payload : book
     //   );
-    // case UPDATE_SOLD:
-    //   return shareBooks.map((book) =>
-    //     action.payload._id === book._id ? action.payload : book
-    //   );
+    case UPDATE_SHARE:
+      return shareBooks.map((book) =>
+        action.payload._id === book._id ? action.payload : book
+      );
     // case UPDATE_BOOKS:
     //   return shareBooks.map((book) =>
     //     action.payload._id === book._id ? action.payload : book
     //   );
-    // case DELETE_BOOK:
-    //   return shareBooks.filter((book) => action.payload !== book._id);
+    case DELETE_SHARE_BOOK:
+      return shareBooks.filter((book) => action.payload !== book._id);
     default:
       return shareBooks;
   }
