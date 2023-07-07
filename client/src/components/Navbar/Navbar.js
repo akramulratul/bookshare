@@ -34,7 +34,7 @@ const Navbar = () => {
     sellButton,
   } = useStyles();
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
-  const history = useHistory();
+  let history = useHistory();
   const [state, setState] = useState({
     mobileView: false,
     drawerOpen: false,
@@ -284,7 +284,7 @@ const Navbar = () => {
   const displayDesktop = () => {
     return (
       <>
-        <Link component={RouterLink} to="\" color="inherit">
+        <Link component={RouterLink} to="/" color="inherit">
           <img className={image1} src={logo} alt="Book Changer" />
         </Link>
         <Toolbar className={toolbar}>{getMenuButtons()}</Toolbar>
