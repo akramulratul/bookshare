@@ -202,7 +202,7 @@ const ShareBookInfo = ({ match }) => {
                   />
                 </WhatsappShareButton>
                 <EmailShareButton
-                  subject={"Buy second hand books on Book Changer"}
+                  subject={"Buy second hand books on Book Share"}
                   body={window.location.href}
                   seperator={
                     "Buy second-hand books by directly contacting the seller on BookFlow. Sell used books and old books at your price."
@@ -337,7 +337,7 @@ const ShareBookInfo = ({ match }) => {
             key="Home"
             className={classes.name}
           >
-            Book Changer
+            Book Share
           </Link>{" "}
           {" when contacting seller to get a good deal."}
         </Typography>

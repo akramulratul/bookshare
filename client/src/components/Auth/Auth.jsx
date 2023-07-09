@@ -178,7 +178,7 @@ const Auth = () => {
                         className={classes.inline}
                         color="textPrimary"
                       >
-                        User Dashboard 
+                        User Dashboard
                       </Typography>
                     </React.Fragment>
                   }
@@ -341,7 +341,7 @@ const Auth = () => {
             ) : null}
             <form className={classes.form} onSubmit={handleSubmit}>
               <GoogleLogin
-                clientId="466345532266-vvuivtauk0h4b7b1um3sjlgac56sghsb.apps.googleusercontent.com"
+                clientId="303307494307-jkt5phu66bvi8btc3vt5r7rk2onj56mn.apps.googleusercontent.com"
                 render={(renderProps) => (
                   <Box align="center">
                     <Button
@@ -434,27 +434,32 @@ const Auth = () => {
               </Box>
 
               <Dialog open={open} onClose={handleDialogueClose}>
-                  <DialogTitle id="reset-password"> Reset Password</DialogTitle>
-                  <DialogContent>
-                    <DialogContentText>
-                      Change your password by clicking on the link sent on this email when you submit
-                      <TextField
-                        autoFocus
-                        key="Email-key"
-                        margin="dense"
-                        variant="outlined"
-                        id="email"
-                        label="Email Address"
-                        value={resetEmail}
-                        onChange={(e)=>setResetEmail(e.target.value)}
-                        fullWidth
-                      />
-                    </DialogContentText>
-                  </DialogContent>
-                  <DialogActions>
-                    <Button onClick={handleDialogueClose} color="primary">Done</Button>
-                    <Button onClick={handleClickSendMail} color="primary">Send Mail</Button>
-                  </DialogActions>
+                <DialogTitle id="reset-password"> Reset Password</DialogTitle>
+                <DialogContent>
+                  <DialogContentText>
+                    Change your password by clicking on the link sent on this
+                    email when you submit
+                    <TextField
+                      autoFocus
+                      key="Email-key"
+                      margin="dense"
+                      variant="outlined"
+                      id="email"
+                      label="Email Address"
+                      value={resetEmail}
+                      onChange={(e) => setResetEmail(e.target.value)}
+                      fullWidth
+                    />
+                  </DialogContentText>
+                </DialogContent>
+                <DialogActions>
+                  <Button onClick={handleDialogueClose} color="primary">
+                    Done
+                  </Button>
+                  <Button onClick={handleClickSendMail} color="primary">
+                    Send Mail
+                  </Button>
+                </DialogActions>
               </Dialog>
               {isSignup ? (
                 <>

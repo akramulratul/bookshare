@@ -66,7 +66,7 @@ exports.signUp = async (req, res) => {
     );
     updatedUser.save();
     const sender = "reply.akramulratul@gmail.com";
-    const subject = "Book Changer Verify Email";
+    const subject = "Book Share Verify Email";
     const body =
       "You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n" +
       "Please click on the following link, or paste this into your browser to complete the process:\n\n" +
@@ -101,7 +101,12 @@ exports.signUp = async (req, res) => {
       }
     });
     console.log("New User created using sign Up");
-    return res.status(200).json({profile: { name: newUser.name, email: newUser.email, id: newUser._id },token});
+    return res
+      .status(200)
+      .json({
+        profile: { name: newUser.name, email: newUser.email, id: newUser._id },
+        token,
+      });
   } catch (err) {
     return res.status(500).json({ msg: "SomeThing went wrong" });
   }
@@ -162,7 +167,7 @@ exports.verifyEmail = async (req, res) => {
     );
     updatedUser.save();
     const sender = "reply.akramulratul@gmail.com";
-    const subject = "Book Changer Verify Email";
+    const subject = "Book Share Verify Email";
     const body =
       "Please verify your email by clicking the link below:\n\n" +
       req.headers.origin +
@@ -252,7 +257,7 @@ exports.sendResetPassEmail = async (req, res) => {
     updatedUser.save();
     console.log(req.headers.origin);
     const sender = "reply.akramulratul@gmail.com";
-    const subject = "Book Changer Password Reset";
+    const subject = "Book Share Password Reset";
     const body =
       "You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n" +
       "Please click on the following link, or paste this into your browser to complete the process:\n\n" +
@@ -575,7 +580,7 @@ const sendGoogleMail = async (to, toName, password) => {
   try {
     const receiver = to;
     const message = `
-            Welcome ${toName},Greetings from Book Changer!
+            Welcome ${toName},Greetings from Book Share!
             Your password generated is:${password}
             If you want to SignIn manually next time use it.
             You can change this password later by editing your profile.

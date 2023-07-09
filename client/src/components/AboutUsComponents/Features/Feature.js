@@ -23,7 +23,7 @@ const Feature = () => {
           <Typography variant="h4" className={classes.content}>
             Why{" "}
             <Box fontWeight="fontWeightBold" className={classes.contentBold}>
-              Book Changer
+              Book Share
             </Box>
             {" ?"}
           </Typography>

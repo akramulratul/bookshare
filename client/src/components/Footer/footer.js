@@ -23,7 +23,7 @@ const Footer = () => {
           >
             <Typography align="center">
               <Link href="#" color="inherit">
-                <img className={classes.image1} src={logo} alt="Book changer" />
+                <img className={classes.image1} src={logo} alt="Book Share" />
               </Link>
               <br />
               <Typography
@@ -152,7 +152,7 @@ const Footer = () => {
               key="Home"
               className={classes.name}
             >
-              Book Changer
+              Book Share
             </Link>{" "}
             {new Date().getFullYear()}
             {". "}

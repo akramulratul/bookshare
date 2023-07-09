@@ -2,12 +2,12 @@ var items = [
   {
     name: "Harshil Doshi",
     feedback:
-      "Book Changer provides the best deals on books. The books hardly look used and are in great condition. An extraordinary website devoted to books.",
+      "Book Share provides the best deals on books. The books hardly look used and are in great condition. An extraordinary website devoted to books.",
   },
   {
     name: "Sagar Mude",
     feedback:
-      "I adore the variety of books that Book Changer provides. Cracking open an old edition of a book to find a signature, library stamp, note, or doodle makes me smile. I wish I could show you the look on someone's face when I show them your website. Cheap books! Vintage books! Environmental and humanitarian causes! Truly a gift.",
+      "I adore the variety of books that Book Share provides. Cracking open an old edition of a book to find a signature, library stamp, note, or doodle makes me smile. I wish I could show you the look on someone's face when I show them your website. Cheap books! Vintage books! Environmental and humanitarian causes! Truly a gift.",
   },
   {
     name: "Vedant Mondkar",

@@ -25,7 +25,7 @@ const Description = () => {
                   fontWeight="fontWeightBold"
                   className={classes.contentBold}
                 >
-                  Book Changer
+                  Book Share
                 </Box>
               </Typography>
             </Typography>

@@ -1,7 +1,7 @@
-# **Book changer**
+# **Book Share**
 
 New data base password : sUGFdxEl71pxu6iU
-[![Book changer](https://res.cloudinary.com/Book Changer/image/upload/v1621614882/Website/3_u5tfsj.gif)](http://localhost:5000/)
+[![Book Share](https://res.cloudinary.com/Book Share/image/upload/v1621614882/Website/3_u5tfsj.gif)](http://localhost:5000/)
 
 ### Table of Content
 
@@ -9,8 +9,8 @@ username [gicak38918@dronetz.com]
 
 ## Introduction
 
-Book Changer is a website where a person can buy or sell his books. Every year we see that if a student wants to buy second-hand books he has to ask everyone whether they have books or not. Similarly, if a person wants to sell his old books he has to ask everyone and search for buyers. So we try to create a platform where a person can buy or sell his second-hand books without any difficulty.
-So we try to make a Book Changer website with almost all the features which can resolve all the problems the buyers or sellers face while buying or selling a book.
+Book Share is a website where a person can buy or sell his books. Every year we see that if a student wants to buy second-hand books he has to ask everyone whether they have books or not. Similarly, if a person wants to sell his old books he has to ask everyone and search for buyers. So we try to create a platform where a person can buy or sell his second-hand books without any difficulty.
+So we try to make a Book Share website with almost all the features which can resolve all the problems the buyers or sellers face while buying or selling a book.
 
 ## Features
 
@@ -67,7 +67,7 @@ So we try to make a Book Changer website with almost all the features which can 
 
 ## Application
 
-> _Book Changer is a website where a person can buy or sell his books. Every year we see that if a student wants to buy second-hand books he has to ask everyone whether they have books or not. Similarly, if a person wants to sell his old books he has to ask everyone and search for buyers. So we try to create a platform where a person can buy or sell his second-hand books without any difficulty._ > _So we try to make a Book Changer website with almost all the features which can resolve all the problems the buyers or sellers face while buying or selling a book._
+> _Book Share is a website where a person can buy or sell his books. Every year we see that if a student wants to buy second-hand books he has to ask everyone whether they have books or not. Similarly, if a person wants to sell his old books he has to ask everyone and search for buyers. So we try to create a platform where a person can buy or sell his second-hand books without any difficulty._ > _So we try to make a Book Share website with almost all the features which can resolve all the problems the buyers or sellers face while buying or selling a book._
 
 ## Future scope
 
@@ -85,10 +85,10 @@ So we try to make a Book Changer website with almost all the features which can 
    This project has helped me a lot to implement most of the MERN stack operations. Also some additional tricks I have learned through my mentor & teammates. Learned a lot of node modules and implemented them. Fixing the bugs was always challenging, but we have successfully fixed them. I am very glad!
 
 3. Vishal Dange -
-   This is the first project I have worked on which will be used in real life. In this Book Changer Project, I learned to apply all the theories learned about web development. Also, how to make use of libraries and add more features to the website.
+   This is the first project I have worked on which will be used in real life. In this Book Share Project, I learned to apply all the theories learned about web development. Also, how to make use of libraries and add more features to the website.
 
 4. Mohak Chandani -
-   Book Changer was my first project in the field of web development. This project has helped me to learn all the core concepts to build a web application using the MERN stack.
+   Book Share was my first project in the field of web development. This project has helped me to learn all the core concepts to build a web application using the MERN stack.
 
 5. Shashank Pagrut -
    This was my first group project. Through this project, I was able to implement the core concepts of the MERN stack into a web application. My mentor and teammates also helped me to learn new tricks.
@@ -101,13 +101,13 @@ So we try to make a Book Changer website with almost all the features which can 
 Step1 - Clone this repository using:
 
 ```
-$ git clone https://github.com/sagarmude7/Book Changer.git
+$ git clone https://github.com/sagarmude7/Book Share.git
 ```
 
 Step2 - Install the server dependencies:
 
 ```
-cd Book Changer
+cd Book Share
 npm install
 ```
 
@@ -156,14 +156,14 @@ $ git push origin feature/AddFeature
 
 You can see the demo video of our project below.
 
-[![Demo Video](https://res.cloudinary.com/Book Changer/image/upload/v1621614856/Website/youtube_v1rtep.jpg)](https://www.youtube.com/watch?v=VfsMg4z-lfc)
+[![Demo Video](https://res.cloudinary.com/Book Share/image/upload/v1621614856/Website/youtube_v1rtep.jpg)](https://www.youtube.com/watch?v=VfsMg4z-lfc)
 
 ## Links
 
 You will get all the links that are related to the project below-
 
-- [Book Changer](http://localhost:5000/) - The link to Book Changer Website.
-- [Github Repo's Link](https://github.com/sagarmude7/Book Changer) - All the code of Project.
+- [Book Share](http://localhost:5000/) - The link to Book Share Website.
+- [Github Repo's Link](https://github.com/sagarmude7/Book Share) - All the code of Project.
 - [Demo Video](https://youtu.be/VfsMg4z-lfc) - Demo Video of Project.
 
 ## Acknowledgement

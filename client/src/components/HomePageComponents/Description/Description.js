@@ -25,7 +25,7 @@ const Description = () => {
                 letterSpacing={10}
                 className={classes.contentBold}
               >
-                Book Changer
+                Book Share
               </Box>
             </Typography>
             <Typography variant="h5" className={classes.smallText}>
