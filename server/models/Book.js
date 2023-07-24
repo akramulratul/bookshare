@@ -82,10 +82,6 @@ const BookSchema = mongoose.Schema({
     type: Date,
     default: Date.now(),
   },
-  share: {
-    type: Boolean,
-    default: false,
-  },
   borrowRequests: [
     {
       type: mongoose.Schema.Types.ObjectId,

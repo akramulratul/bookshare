@@ -11,8 +11,6 @@ import {
   MenuItem,
   FormControl,
   InputLabel,
-  FormControlLabel,
-  Switch,
   Stepper,
   Step,
   StepLabel,
@@ -50,7 +48,6 @@ const initialState = {
   noOfPages: "",
   edition: "",
   description: "",
-  share: false, // Add this line
 };
 
 const PostAdForm = () => {
@@ -79,7 +76,7 @@ const PostAdForm = () => {
   const Alert = (props) => {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
   };
-  const [share, setShare] = useState(false);
+
   useEffect(() => {
     setUser(JSON.parse(localStorage.getItem("profile")));
     const token = user?.token;
@@ -199,23 +196,6 @@ const PostAdForm = () => {
               <Paper className={classes.paper}>
                 <Grid container spacing={2}>
                   <Grid item xs={12} sm={6}>
-                    <FormControlLabel
-                      control={
-                        <Switch
-                          checked={share}
-                          onChange={() => {
-                            setShare(!share);
-                            setBookData((prev) => ({
-                              ...prev,
-                              share: !prev.share,
-                            }));
-                          }}
-                        />
-                      }
-                      label="Share Book"
-                    />
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
                     <TextField
                       name="author"
                       variant="outlined"
@@ -225,87 +205,69 @@ const PostAdForm = () => {
                       onChange={handleChange}
                     />
                   </Grid>
-                  {!share ? (
-                    <>
-                      <Grid item xs={12} sm={6}>
-                        <FormControl
-                          variant="outlined"
-                          className={classes.formControl}
-                          fullWidth
-                        >
-                          <InputLabel id="conditionTypeLabel">
-                            Condition Of Book
-                          </InputLabel>
-                          <Select
-                            labelId="conditionLabel"
-                            id="condition"
-                            label="Condition Of Book"
-                            onChange={handleChange}
-                            value={bookData.condition}
-                            name="condition"
-                          >
-                            <MenuItem value="Used">Used</MenuItem>
-                            <MenuItem value="New">New</MenuItem>
-                          </Select>
-                        </FormControl>
-                      </Grid>
-                      <Grid item xs={12} sm={6}>
-                        <TextField
-                          name="price"
-                          variant="outlined"
-                          label="Selling Price"
-                          fullWidth
-                          value={bookData.price}
-                          onChange={handleChange}
-                        />
-                      </Grid>
-                      <Grid item xs={12} sm={6}>
-                        <FormControl
-                          variant="outlined"
-                          className={classes.formControl}
-                          fullWidth
-                        >
-                          <InputLabel id="type-label">Price Type</InputLabel>
-                          <Select
-                            labelId="type-label"
-                            id="priceType"
-                            label="Price Type"
-                            name="priceType"
-                            value={bookData.priceType}
-                            onChange={handleChange}
-                          >
-                            <MenuItem value="Fixed">Fixed</MenuItem>
-                            <MenuItem value="Negotiable">Negotiable</MenuItem>
-                            <MenuItem value="Price on Call">
-                              Price on Call
-                            </MenuItem>
-                          </Select>
-                        </FormControl>
-                      </Grid>
-                      <Grid item xs={12} sm={6}>
-                        <TextField
-                          name="mrp"
-                          variant="outlined"
-                          label="MRP Of Book"
-                          fullWidth
-                          value={bookData.mrp}
-                          onChange={handleChange}
-                        />
-                      </Grid>
-                    </>
-                  ) : (
-                    <Grid item xs={12} sm={6}>
-                      <TextField
-                        name="mrp"
-                        variant="outlined"
-                        label="Direction of your address"
-                        fullWidth
-                        value={bookData.direction}
+                  <Grid item xs={12} sm={6}>
+                    <FormControl
+                      variant="outlined"
+                      className={classes.formControl}
+                      fullWidth
+                    >
+                      <InputLabel id="conditionTypeLabel">
+                        Condition Of Book
+                      </InputLabel>
+                      <Select
+                        labelId="conditionLabel"
+                        id="condition"
+                        label="Condition Of Book"
                         onChange={handleChange}
-                      />
-                    </Grid>
-                  )}
-
+                        value={bookData.condition}
+                        name="condition"
+                      >
+                        <MenuItem value="Used">Used</MenuItem>
+                        <MenuItem value="New">New</MenuItem>
+                      </Select>
+                    </FormControl>
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <TextField
+                      name="price"
+                      variant="outlined"
+                      label="Selling Price"
+                      fullWidth
+                      value={bookData.price}
+                      onChange={handleChange}
+                    />
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <FormControl
+                      variant="outlined"
+                      className={classes.formControl}
+                      fullWidth
+                    >
+                      <InputLabel id="type-label">Price Type</InputLabel>
+                      <Select
+                        labelId="type-label"
+                        id="priceType"
+                        label="Price Type"
+                        name="priceType"
+                        value={bookData.priceType}
+                        onChange={handleChange}
+                      >
+                        <MenuItem value="Fixed">Fixed</MenuItem>
+                        <MenuItem value="Negotiable">Negotiable</MenuItem>
+                        <MenuItem value="Price on Call">Price on Call</MenuItem>
+                      </Select>
+                    </FormControl>
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <TextField
+                      name="mrp"
+                      variant="outlined"
+                      label="MRP Of Book"
+                      fullWidth
+                      value={bookData.mrp}
+                      onChange={handleChange}
+                    />
+                  </Grid>
                   <Grid item xs={12} sm={12}>
                     <div className={classes.root1}>
                       <input

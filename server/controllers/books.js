@@ -15,6 +15,7 @@ exports.getBooks = async (req, res) => {
 exports.createBookAd = async (req, res) => {
   const book = req.body;
   const { error } = postBookValidator.validate(req.body);
+
   if (!req.userId) return res.status(403).json({ msg: "Unauthorized" });
   try {
     if (error) {
@@ -23,12 +24,8 @@ exports.createBookAd = async (req, res) => {
     const { selectedFile } = req.body;
 
     const noOfPages = Number(book.noOfPages);
-    let price;
-    if (!book.share) {
-      // Add this condition
-      price = Number(book.price);
-    }
-    let mrp = Number(book.mrp);
+    const price = Number(book.price);
+    const mrp = Number(book.mrp);
 
     const newBook = new Book({
       ...book,
@@ -37,7 +34,6 @@ exports.createBookAd = async (req, res) => {
       mrp: mrp,
       owner: req.userId,
       wishListedBy: [],
-      share: book.share, // Add this line
       createdAt: new Date().toISOString(),
     });
     await newBook.save();

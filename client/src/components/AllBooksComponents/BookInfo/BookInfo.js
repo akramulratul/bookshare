@@ -149,7 +149,7 @@ const BookInfo = ({ match }) => {
                     </span>
                   </li>
                   <li>
-                    Condition:{" "}
+                    Condition:
                     <span className={classes.name}>{book.condition}</span>
                   </li>
                   <li>

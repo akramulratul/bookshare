@@ -19,6 +19,7 @@ export const UPDATE_SHARE = "UPDATE_SHARE";
 export const DELETE_BOOK = "DELETE_BOOK";
 export const DELETE_SHARE_BOOK = "DELETE_SHARE_BOOK";
 export const CARD_CLICKED = "CARD_CLICKED";
+export const NEW_MESSAGE_RECEIVED = "NEW_MESSAGE_RECEIVED";
 export const VALID = "VALID";
 export const ADD_CHAT = "ADD_CHAT";
 export const INITIAL_CHAT = "INITIAL_CHAT";
