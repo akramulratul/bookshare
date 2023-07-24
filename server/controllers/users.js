@@ -433,6 +433,7 @@ exports.googleFacebookSignIn = async (req, res) => {
       token,
     });
   } catch (err) {
+    console.log(err);
     return res.status(500).json({ msg: "Something went wrong" });
   }
 };
@@ -648,27 +649,85 @@ exports.sendChatMail = async (to, toName, fromName, url) => {
 
 exports.getRecentUsers = async (req, res) => {
   const userId = req.userId;
+  console.log(userId);
   try {
-    const recentUsers = await Message.distinct("fromName", { to: userId });
-    console.log(recentUsers);
-    const recentIds = await Message.distinct("from", { to: userId });
-    console.log(recentIds);
+    // Fetch messages to the user sorted by time in descending order
+    const messages = await Message.find({ to: userId }).sort({ createdAt: -1 });
+    console.log("Messages", messages);
+
+    // Create an object to hold unique users
+    const usersMap = {};
     const users = [];
-    for (const recent of recentUsers) {
-      users.push({ name: recent });
+
+    for (const message of messages) {
+      // Only add to the users list if the sender is not yet in usersMap
+      if (!usersMap[message.from]) {
+        usersMap[message.from] = true;
+        users.push({ name: message.fromName, id: message.from });
+      }
     }
-    console.log(users);
-    var j = 0;
-    for (const id of recentIds) {
-      users[j] = { ...users[j], id: id };
-      j++;
-    }
-    console.log(users);
+
+    console.log("recent users", users);
     return res.status(200).json(users);
   } catch (err) {
     console.log(err);
   }
 };
+
+// exports.getRecentUsers = async (req, res) => {
+//   const userId = req.userId;
+//   console.log(userId);
+//   try {
+//     const recentUsers = await Message.distinct("fromName", { to: userId });
+//     console.log("Name", recentUsers);
+//     const recentIds = await Message.distinct("from", { to: userId });
+//     console.log("recent IDS", recentIds);
+//     const users = [];
+//     for (const recent of recentUsers) {
+//       users.push({ name: recent });
+//     }
+//     console.log("recent users", users);
+//     var j = 0;
+//     for (const id of recentIds) {
+//       users[j] = { ...users[j], id: id };
+//       j++;
+//     }
+//     console.log("Now Users", users);
+//     return res.status(200).json(users);
+//   } catch (err) {
+//     console.log(err);
+//   }
+// };
+
+// exports.getRecentUsers = async (req, res) => {
+//   const userId = req.userId;
+//   try {
+//     // Get messages sent to userId
+//     const messages = await Message.find({ to: userId });
+
+//     // Create an empty object to hold the unique users
+//     const uniqueUsers = {};
+
+//     // For each message
+//     for (const msg of messages) {
+//       // If the sender is not already in uniqueUsers
+//       if (!(msg.from in uniqueUsers)) {
+//         // Add them to uniqueUsers
+//         uniqueUsers[msg.from] = msg.fromName;
+//       }
+//     }
+
+//     // Convert uniqueUsers to an array of objects
+//     const users = Object.keys(uniqueUsers).map((id) => {
+//       return { id: id, name: uniqueUsers[id] };
+//     });
+
+//     console.log(users);
+//     return res.status(200).json(users);
+//   } catch (err) {
+//     console.log(err);
+//   }
+// };
 
 exports.deleteaBookFromWish = async (req, res) => {
   // console.log("This is Backend Request to delete a book" );

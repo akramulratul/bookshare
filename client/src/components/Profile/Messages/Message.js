@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Container,
   Typography,
@@ -7,6 +7,8 @@ import {
   CardContent,
 } from "@material-ui/core";
 import { getRecentUsers } from "./../../../actions/user";
+
+import { CARD_CLICKED } from "../../../constants/actions";
 import useStyles from "../styles";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -20,19 +22,37 @@ const Message = () => {
   const classes = useStyles();
   const history = useHistory();
   const recents = useSelector((state) => state.recents);
+  const clickedCards = useSelector((state) => state.clickedCards);
+  const [clicked, setClicked] = useState(new Array(recents.length).fill(false));
 
   useEffect(() => {
     dispatch(getRecentUsers());
   }, []);
-  console.log(recents)
+
+  useEffect(() => {
+    setClicked(new Array(recents.length).fill(false));
+  }, [recents]);
+
+  const handleClick = (userId) => {
+    dispatch({ type: CARD_CLICKED, payload: userId });
+    history.push(`user/${userId}`);
+  };
+
   return (
     <div>
       <Container className={classes.messageBody}>
         <Typography className={classes.messageHeading}>
           Recent Messages
         </Typography>
-        {recents.map((user,index) => (
-          <Card className={classes.messageCard} variant="outlined">
+        {recents.map((user, index) => (
+          <Card
+            className={
+              clickedCards.includes(user.id)
+                ? classes.clickedCard
+                : classes.messageCard
+            }
+            variant="outlined"
+          >
             <CardContent className={classes.messageCardContent}>
               <Avatar src={user.profilePic} className={classes.large}></Avatar>
               <div>
@@ -54,9 +74,11 @@ const Message = () => {
             </CardContent>
             <CardActions>
               <IconButton
-                key={user.id}
                 className={classes.messageButtonOuter}
-                onClick={() => history.push(`user/${user.id}`)}
+                onClick={() => {
+                  handleClick(user.id);
+                  // history.push(`user/${user.id}`);
+                }}
                 size="small"
               >
                 <ChatIcon className={classes.messageButton} />

@@ -347,7 +347,7 @@ const Auth = () => {
             ) : null}
             <form className={classes.form} onSubmit={handleSubmit}>
               <GoogleLogin
-                clientId="303307494307-jkt5phu66bvi8btc3vt5r7rk2onj56mn.apps.googleusercontent.com"
+                clientId="303307494307-pubgpoqbc2tumdhsa6v7fi5p70d6of2n.apps.googleusercontent.com"
                 render={(renderProps) => (
                   <Box align="center">
                     <Button
@@ -355,6 +355,7 @@ const Auth = () => {
                       fullWidth
                       className={classes.customLogin}
                       onClick={renderProps.onClick}
+                      // onClick={responseMessage}
                       disabled={renderProps.disabled}
                       startIcon={<GoogleIcon />}
                       variant="contained"
@@ -365,7 +366,7 @@ const Auth = () => {
                 )}
                 onSuccess={googleSuccess}
                 onFailure={googleError}
-                cookiePolicy="single_host_origin"
+                // cookiePolicy="single_host_origin"
               />
 
               <Typography

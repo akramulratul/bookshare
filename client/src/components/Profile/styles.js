@@ -208,9 +208,14 @@ export default makeStyles((theme) => ({
     flexDirection: "row",
     width: "100%",
     backgroundColor: "#D8C3A5",
-    //backgroundColor:'#EAE7DC',
+    // backgroundColor:'#EAE7DC',
   },
-
+  clickedCard: {
+    display: "flex",
+    flexDirection: "row",
+    width: "100%",
+    backgroundColor: "lightblue !important",
+  },
   messageCardContent: {
     display: "flex",
     flexDirection: "row",

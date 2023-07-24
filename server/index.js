@@ -19,7 +19,7 @@ connectDB();
 app.get("/", (req, res) => {
   res.send("This is Book Share Api");
 });
-
+app.use(express.static("public"));
 app.use((req, res, next) => {
   res.append("Access-Control-Allow-Origin", "http://localhost:3000/");
   res.append("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,PATCH");

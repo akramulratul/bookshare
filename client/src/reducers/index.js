@@ -10,6 +10,7 @@ import notification from "./notifications";
 import recents from "./recents";
 import shareBook from "./shareBook";
 import shareBooks from "./shareBooks";
+import clickedCards from "./clickedCards";
 
 export default combineReducers({
   books,
@@ -23,4 +24,5 @@ export default combineReducers({
   recents,
   shareBook,
   shareBooks,
+  clickedCards,
 });

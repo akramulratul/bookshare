@@ -210,12 +210,12 @@ const Profile = () => {
               />
               <Tab
                 className={classes.rootTab}
-                label="Shared Book"
+                label="Messages"
                 {...a11yProps(2)}
               />
               <Tab
                 className={classes.rootTab}
-                label="Messages"
+                label="Share Book"
                 {...a11yProps(3)}
               />
             </Tabs>
@@ -231,10 +231,10 @@ const Profile = () => {
         <Dashboard />
       </TabPanel>
       <TabPanel value={value} index={2} dir={theme.direction}>
-        <DashboardShare />
+        <Message />
       </TabPanel>
       <TabPanel value={value} index={3} dir={theme.direction}>
-        <Message />
+        <DashboardShare />
       </TabPanel>
     </div>
   );
