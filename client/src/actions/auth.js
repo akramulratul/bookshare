@@ -104,8 +104,8 @@ export const verifiedUser = (token, history) => async (dispatch) => {
     dispatch({ type: VALID, payload: { msg: data.msg, type: "success" } });
     history.push("/");
   } catch (err) {
-    const data = err?.response?.data;
-    dispatch({ type: VALID, payload: { msg: data.msg, type: "error" } });
+    // const data = err?.response?.data;
+    // dispatch({ type: VALID, payload: {msg:data.msg,type:"error"}});
     console.log(err);
   }
 };

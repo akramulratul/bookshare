@@ -354,11 +354,7 @@ const Auth = () => {
                       color="primary"
                       fullWidth
                       className={classes.customLogin}
-                      // onClick={renderProps.onClick}
-                      onClick={() => {
-                        console.log("Button clicked");
-                        renderProps.onClick();
-                      }}
+                      onClick={renderProps.onClick}
                       disabled={renderProps.disabled}
                       startIcon={<GoogleIcon />}
                       variant="contained"
@@ -367,7 +363,7 @@ const Auth = () => {
                     </Button>
                   </Box>
                 )}
-                onSuccess={responseMessage}
+                onSuccess={googleSuccess}
                 onFailure={googleError}
                 cookiePolicy="single_host_origin"
               />
