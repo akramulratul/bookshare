@@ -30,6 +30,7 @@ app.use((req, res, next) => {
   res.append("Access-Control-Allow-Credentials", "true");
   res.append("Origin", "http://localhost:3000/");
   res.append("Access-Control-Max-Age", "86400");
+
   next();
 });
 

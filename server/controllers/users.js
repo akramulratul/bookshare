@@ -365,7 +365,7 @@ function random_password_generate(max, min) {
 
 exports.googleFacebookSignIn = async (req, res) => {
   const { email, name, profilePic } = req.body;
-  // console.log(email)
+  console.log(req.body);
   try {
     const oldUser = await User.findOne({ email: email });
 

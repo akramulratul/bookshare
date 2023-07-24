@@ -124,6 +124,8 @@ const Auth = () => {
   };
 
   const googleSuccess = async (res) => {
+    console.log(res);
+    console.log(res.profileObj);
     try {
       dispatch(
         googleFacebookSignIn(
@@ -139,7 +141,9 @@ const Auth = () => {
       console.log(err);
     }
   };
-
+  const responseMessage = (response) => {
+    console.log(response);
+  };
   const googleError = () => {
     alert("Google Sign In was unsuccessful. Try again later");
   };
@@ -350,7 +354,11 @@ const Auth = () => {
                       color="primary"
                       fullWidth
                       className={classes.customLogin}
-                      onClick={renderProps.onClick}
+                      // onClick={renderProps.onClick}
+                      onClick={() => {
+                        console.log("Button clicked");
+                        renderProps.onClick();
+                      }}
                       disabled={renderProps.disabled}
                       startIcon={<GoogleIcon />}
                       variant="contained"
@@ -359,7 +367,7 @@ const Auth = () => {
                     </Button>
                   </Box>
                 )}
-                onSuccess={googleSuccess}
+                onSuccess={responseMessage}
                 onFailure={googleError}
                 cookiePolicy="single_host_origin"
               />
