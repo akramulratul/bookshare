@@ -50,12 +50,8 @@ const verifyEmail = (email) => API.post(`${urlUsers}/verify-email`, email);
 const verifiedUser = (token) => API.post(`${urlUsers}/validate-user`, token);
 
 const googleFacebookSignIn = (formData) =>
-<<<<<<< HEAD
   // API.post(`${urlUsers}/googleFacebookSignIn`, formData);
   API.post(`/auth`, formData);
-=======
-  API.post(`${urlUsers}/googleFacebookSignIn`, formData);
->>>>>>> 3155654606ec7495e5b28ed9659ffe09d691121e
 
 const getProfile = (id) => API.get(`${urlUsers}/profile/${id}`);
 const getRecentUsers = () => API.get(`${urlUsers}/profile/messages`);
