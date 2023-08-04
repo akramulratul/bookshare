@@ -21,14 +21,14 @@ app.get("/", (req, res) => {
 });
 app.use(express.static("public"));
 app.use((req, res, next) => {
-  res.append("Access-Control-Allow-Origin", "https://booksharebd.netlify.app/");
+  res.append("Access-Control-Allow-Origin", "https://booksharebd.netlify.app");
   res.append("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,PATCH");
   res.append(
     "Access-Control-Allow-Headers",
     "authorization,Content-Type,origin, x-requested-with"
   );
   res.append("Access-Control-Allow-Credentials", "true");
-  res.append("Origin", "https://booksharebd.netlify.app/");
+  res.append("Origin", "https://booksharebd.netlify.app");
   res.append("Access-Control-Max-Age", "86400");
   next();
 });
@@ -47,7 +47,7 @@ var server = app.listen(PORT, () =>
 
 options = {
   cors: true,
-  origins: ["https://booksharebd.netlify.app/"],
+  origins: ["https://booksharebd.netlify.app:5000"],
 };
 const io = require("socket.io")(server, options);
 
