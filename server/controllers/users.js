@@ -550,7 +550,7 @@ exports.sendMail = async (req, res) => {
       requireTLS: true,
       auth: {
         user: "reply.akramulratul@gmail.com",
-        pass: "whkvfuivpmpynoxy",
+        pass: "xrxgooxsjhpmikcp",
       },
     });
 
@@ -593,7 +593,7 @@ const sendGoogleMail = async (to, toName, password) => {
       requireTLS: true,
       auth: {
         user: "reply.akramulratul@gmail.com",
-        pass: "whkvfuivpmpynoxy",
+        pass: "xrxgooxsjhpmikcp",
       },
     });
 
@@ -628,7 +628,7 @@ exports.sendChatMail = async (to, toName, fromName, url) => {
       requireTLS: true,
       auth: {
         user: "reply.akramulratul@gmail.com",
-        pass: "whkvfuivpmpynoxy",
+        pass: "xrxgooxsjhpmikcp",
       },
     });
 

@@ -1,6 +1,6 @@
 const axios = require("axios");
 const API = axios.create({
-  baseURL: "http://localhost:3000/",
+  baseURL: "https://booksharebd.com/",
 });
 
 API.interceptors.request.use((req) => {
@@ -51,7 +51,7 @@ const verifiedUser = (token) => API.post(`${urlUsers}/validate-user`, token);
 
 const googleFacebookSignIn = (formData) =>
   API.post(`${urlUsers}/googleFacebookSignIn`, formData);
-  // API.post(`/auth`, formData);
+// API.post(`/auth`, formData);
 
 const getProfile = (id) => API.get(`${urlUsers}/profile/${id}`);
 const getRecentUsers = () => API.get(`${urlUsers}/profile/messages`);

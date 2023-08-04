@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sagarmude7/Bookxchanger.git"
+    "url": "git+https://github.com/akramulratul/bookshare.git"
   },
   "author": "Vedant Mondkar",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sagarmude7/Bookxchanger/issues"
+    "url": "https://github.com/akramulratul/bookshare/issues"
   },
-  "homepage": "https://github.com/sagarmude7/Bookxchanger#readme",
+  "homepage": "https://github.com/akramulratul/bookshare#readme",
   "devDependencies": {
     "concurrently": "^6.1.0",
     "nodemon": "^2.0.7"
