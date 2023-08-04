@@ -1,6 +1,6 @@
 const axios = require("axios");
 const API = axios.create({
-  baseURL: "https://booksharebd.com/",
+  baseURL: "https://booksharebd.netlify.app/",
 });
 
 API.interceptors.request.use((req) => {
