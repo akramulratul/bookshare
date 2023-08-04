@@ -21,14 +21,14 @@ app.get("/", (req, res) => {
 });
 app.use(express.static("public"));
 app.use((req, res, next) => {
-  res.append("Access-Control-Allow-Origin", "http://localhost:3000/");
+  res.append("Access-Control-Allow-Origin", "https://booksharebd.com/");
   res.append("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,PATCH");
   res.append(
     "Access-Control-Allow-Headers",
     "authorization,Content-Type,origin, x-requested-with"
   );
   res.append("Access-Control-Allow-Credentials", "true");
-  res.append("Origin", "http://localhost:3000/");
+  res.append("Origin", "https://booksharebd.com/");
   res.append("Access-Control-Max-Age", "86400");
   next();
 });
@@ -47,7 +47,7 @@ var server = app.listen(PORT, () =>
 
 options = {
   cors: true,
-  origins: ["http://localhost:3000/"],
+  origins: ["https://booksharebd.com/"],
 };
 const io = require("socket.io")(server, options);
 
@@ -116,7 +116,7 @@ io.on("connection", async (socket) => {
           receiver.email,
           receiver.name,
           message.fromName,
-          `http://localhost:3000/user/${message.from}`
+          `https://booksharebd.com/user/${message.from}`
         );
       }
     } catch (err) {}
