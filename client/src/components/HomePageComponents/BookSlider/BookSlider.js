@@ -5,6 +5,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import PulseLoader from "react-spinners/PulseLoader";
 import Book from "../../AllBooksComponents/Book/Book";
+import ShareBook from "../../AllBooksComponents/Book/ShareBook";
 import { Grid, Container, Typography } from "@material-ui/core";
 import { getBooks } from "../../../actions/books";
 import { getShareBooks } from "../../../actions/shareBooks";
@@ -291,7 +292,8 @@ const BookSlider = () => {
             {bookShare.map((book) => (
               <Grid className={classes.grid} key={book._id}>
                 <Container>
-                  <Book book={book} />
+                  <ShareBook book={book} />
+                  {/* <Book book={book} /> */}
                 </Container>
               </Grid>
             ))}

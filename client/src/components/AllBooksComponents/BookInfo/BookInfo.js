@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import useStyles from "./styles.js";
+import { useLocation } from "react-router-dom";
 import { Link as RouterLink, useHistory } from "react-router-dom";
 import {
   EmailShareButton,
@@ -26,13 +27,13 @@ const BookInfo = ({ match }) => {
   const classes = useStyles();
   const history = useHistory();
   const dispatch = useDispatch();
+  let location = useLocation();
   const books = useSelector((state) => state.books);
   const book = useSelector((state) => state.book);
   const bookId = match.params.bookId;
   const [found] = useState(books.find((bk) => bk._id === bookId) !== undefined);
   const [contact_URL, setContact_URL] = useState("/auth");
   const localUser = JSON.parse(localStorage.getItem("profile"));
-
   useEffect(() => {
     localUser ? setContact_URL(`/user/${book.owner}`) : setContact_URL("/auth");
   });
