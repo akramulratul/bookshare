@@ -1,7 +1,7 @@
 # **Book Share**
 
 New data base password : sUGFdxEl71pxu6iU
-[![Book Share](https://res.cloudinary.com/Book Share/image/upload/v1621614882/Website/3_u5tfsj.gif)](http://localhost:5000/)
+[![Book Share](https://res.cloudinary.com/Book Share/image/upload/v1621614882/Website/3_u5tfsj.gif)](https://bookshare-alpha.vercel.app/)
 
 ### Table of Content
 
@@ -101,7 +101,7 @@ So we try to make a Book Share website with almost all the features which can re
 Step1 - Clone this repository using:
 
 ```
-$ git clone https://github.com/sagarmude7/Book Share.git
+$ git clone https://github.com/akramulratul/bookshare.git
 ```
 
 Step2 - Install the server dependencies:
@@ -162,7 +162,7 @@ You can see the demo video of our project below.
 
 You will get all the links that are related to the project below-
 
-- [Book Share](http://localhost:5000/) - The link to Book Share Website.
+- [Book Share](https://bookshare-alpha.vercel.app/) - The link to Book Share Website.
 - [Github Repo's Link](https://github.com/sagarmude7/Book Share) - All the code of Project.
 - [Demo Video](https://youtu.be/VfsMg4z-lfc) - Demo Video of Project.
 

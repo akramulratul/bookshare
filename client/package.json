@@ -75,5 +75,5 @@
   "globals": {
     "_": true
   },
-  "proxy": "http://localhost:5000/"
+  "proxy": "https://bookshare-alpha.vercel.app/"
 }
